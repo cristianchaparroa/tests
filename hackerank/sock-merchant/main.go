@@ -26,12 +26,10 @@ func countPairs(p map[int32]int32) int32 {
 
 	for _, v := range p {
 
-		if isEven(v) {
-			pairs = pairs + v/2
-		} else {
+		if !isEven(v) {
 			v = (v - 1)
-			pairs = pairs + v/2
 		}
+		pairs = pairs + v/2
 	}
 
 	return pairs
